@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Author: Robert Christopher
+# Content: All mac OS related settings & environment setup
+
+# Software Tools Installation
+
+# Home brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
+
+# OS Settings
+
+# Set login message
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Welcome to Robert Christophers macbook"
+
+# Trackpad tap to click
+defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 1
+
+# Keyboard key repeat
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+
+# UI Add quit to finder
+defaults write com.apple.finder QuitMenuItem -bool true; killall Finder
