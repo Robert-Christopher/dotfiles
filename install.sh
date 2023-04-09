@@ -8,4 +8,4 @@ fi
 
 brew install stow
 
-stow zsh
+stow zsh git
